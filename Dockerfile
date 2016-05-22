@@ -14,6 +14,6 @@ ADD passwd /root/.vnc/passwd
 
 RUN chmod 600 /root/.vnc/passwd
 
-CMD ['/usr/bin/vncserver :1 -geometry 1280x800 -depth 24']
+CMD ["/usr/bin/vncserver",":1","-geometry 1280x800","-depth 24"]
 
 EXPOSE 5901
