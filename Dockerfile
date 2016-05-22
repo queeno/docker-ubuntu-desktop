@@ -5,7 +5,7 @@ ENV USER root
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends ubuntu-desktop && \
-    apt-get install gnome-panel gnome-settings-daemon metacity nautilus gnome-terminal && \
+    apt-get install -y gnome-panel gnome-settings-daemon metacity nautilus gnome-terminal && \
     apt-get install -y tightvncserver && \
     mkdir /root/.vnc
 
