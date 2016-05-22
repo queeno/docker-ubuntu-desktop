@@ -12,6 +12,8 @@ RUN apt-get update && \
 ADD xstartup /root/.vnc/xstartup
 ADD passwd /root/.vnc/passwd
 
-CMD ['vncserver :1 -geometry 1280x800 -depth 24']
+RUN chmod 600 /root/.vnc/passwd
+
+CMD ['/usr/bin/vncserver :1 -geometry 1280x800 -depth 24']
 
 EXPOSE 5901
