@@ -9,3 +9,5 @@ Docker container for Ubuntu 16.04 including ubuntu-desktop and vncserver.
 and then connect to:
 
 `vnc://<host>:5901` via VNC client.
+
+The VNC password is `password`.
