@@ -6,7 +6,7 @@ ENV NO_VNC_HOME /root/noVNC
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends ubuntu-desktop && \
-    apt-get install -y gnome-panel gnome-settings-daemon metacity nautilus gnome-terminal && \
+    apt-get install -y wget gnome-panel gnome-settings-daemon metacity nautilus gnome-terminal && \
     apt-get install -y tightvncserver && \
     mkdir /root/.vnc
 
