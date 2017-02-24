@@ -6,7 +6,7 @@ ENV NO_VNC_HOME /root/noVNC
 
 # install packages
 RUN apt-get update && \
-    apt-get install xfce4 xfce4-goodies tightvncserver terminator
+    apt-get install -y xfce4 xfce4-goodies tightvncserver terminator
     
 ADD xstartup /root/.vnc/xstartup
 ADD passwd /root/.vnc/passwd
