@@ -4,19 +4,14 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV USER root
 ENV NO_VNC_HOME /root/noVNC
 
-RUN add-apt-repository ppa:wine/wine-builds && \
-    dpkg --add-architecture i386
 # install packages
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends ubuntu-desktop && \
-    apt-get install -y wget net-tools gnome-panel gnome-settings-daemon metacity nautilus gnome-terminal && \
-    apt-get install -y tightvncserver && \
-    apt-get install -y wine winetricks && \
-    mkdir /root/.vnc
-
+    apt-get install xfce4 xfce4-goodies tightvncserver terminator
+    
 ADD xstartup /root/.vnc/xstartup
 ADD passwd /root/.vnc/passwd
 
+RUN chmod +x /root/.vnc/xstartup
 RUN chmod 600 /root/.vnc/passwd
 
 RUN mkdir -p $NO_VNC_HOME/utils/websockify \
