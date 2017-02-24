@@ -6,7 +6,11 @@ ENV NO_VNC_HOME /root/noVNC
 
 # install packages
 RUN apt-get update && \
-    apt-get install -y xfce4 xfce4-goodies tightvncserver terminator wget net-tools
+    apt-get install -y xfce4 xfce4-goodies tightvncserver terminator wget net-tools firefox software-properties-common python-software-properties && \
+    add-apt-repository ppa:wine/wine-builds && \
+    dpkg --add-architecture i386 && \
+    apt-get update && \
+    apt-get install -y winehq-staging
     
 ADD xstartup /root/.vnc/xstartup
 ADD passwd /root/.vnc/passwd
