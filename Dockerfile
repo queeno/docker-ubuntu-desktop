@@ -3,10 +3,12 @@ FROM ubuntu:16.04
 ENV DEBIAN_FRONTEND noninteractive
 ENV USER root
 
+ADD sources.list /etc/apt/sources.list
+
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends ubuntu-desktop && \
-    apt-get install -y gnome-panel gnome-settings-daemon metacity nautilus gnome-terminal && \
-    apt-get install -y tightvncserver && \
+    apt-get install -y --no-install-recommends --fix-missing ubuntu-desktop && \
+    apt-get install -y --fix-missing gnome-panel gnome-settings-daemon metacity nautilus gnome-terminal && \
+    apt-get install -y --fix-missing tightvncserver && \
     mkdir /root/.vnc
 
 ADD xstartup /root/.vnc/xstartup
