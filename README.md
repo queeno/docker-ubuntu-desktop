@@ -1,6 +1,6 @@
 # Ubuntu Desktop Dockerfile
 
-Docker container for Ubuntu 16.04 including ubuntu-desktop and vncserver.
+Docker container for Ubuntu [18.04.02 **LTS**](http://releases.ubuntu.com/18.04.2/ "Ubuntu 18.04.02 LTS") including ubuntu-desktop and vncserver.
 
 # How to run
 
